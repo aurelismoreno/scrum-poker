@@ -1,0 +1,24 @@
+{
+  "name": "scrum-poker",
+  "version": "1.0.0",
+  "description": "Scrum Poker permite estimar el esfuerzo necesario de cada tarea.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aurelismoreno/scrum-poker.git"
+  },
+  "keywords": [
+    "poker",
+    "srum",
+    "vanilla"
+  ],
+  "author": "Aurelis Moreno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aurelismoreno/scrum-poker/issues"
+  },
+  "homepage": "https://github.com/aurelismoreno/scrum-poker#readme"
+}
