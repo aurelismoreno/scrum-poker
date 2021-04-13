@@ -1,5 +1,5 @@
-import encabezado from '../reutilizable/encabezado.js';
-import input from '../reutilizable/input.js';
+import encabezadoUsuario from '../usuario/encabezadoUsuario.js';
+import inputUsuario from '../usuario/inputUsuario.js';
 import footer from '../reutilizable/footer.js';
 
 const usuarioView = () => {
@@ -7,8 +7,8 @@ const usuarioView = () => {
 
 	wrapperElement.classList.add('usuarioView');
 
-	wrapperElement.appendChild(encabezado());
-	wrapperElement.appendChild(input());
+	wrapperElement.appendChild(encabezadoUsuario());
+	wrapperElement.appendChild(inputUsuario());
 	wrapperElement.appendChild(footer());
 
 	return wrapperElement;

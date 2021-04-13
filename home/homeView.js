@@ -1,5 +1,5 @@
-import encabezado from '../reutilizable/encabezado.js';
-import input from '../reutilizable/input.js';
+import encabezadoHome from './encabezadoHome.js';
+import inputHome from '../home/inputHome.js';
 import footer from '../reutilizable/footer.js';
 
 const homeView = () => {
@@ -7,8 +7,8 @@ const homeView = () => {
 
 	wrapperElement.classList.add('homeView');
 
-	wrapperElement.appendChild(encabezado());
-	wrapperElement.appendChild(input());
+	wrapperElement.appendChild(encabezadoHome());
+	wrapperElement.appendChild(inputHome());
 	wrapperElement.appendChild(footer());
 
 	return wrapperElement;

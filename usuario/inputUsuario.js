@@ -1,14 +1,18 @@
-const input = () => {
+const inputUsuario = () => {
 	const template = `
     <div class="input-interno">
-        <h3>Usuario</h3>
-        <input id="inputUsuario" type="text" placeholder="Ingrese usuario">
-        <button class="input-botonIngresar">Ingresar</button>
+        <h3>CREAR SALA</h3>
+        <input id="inputUsuario-Crear" type="text" placeholder="Crear codigo de sala">
+        <button class="input-botonIngresar">CREAR</button>
+        <br/>
+        <h3>UNIRSE A UNA SALA </h3>
+        <input id="inputUsuario-Ingresar" type="text" placeholder="Ingrese codido de sala">
+        <button class="input-botonIngresar">UNIRSE</button>
     </div>
   `;
 
-	const wrapperElement = document.createElement('div');
-	wrapperElement.classList.add('input');
+	const wrapperElement = document.createElement('section');
+
 	wrapperElement.innerHTML = template;
 
 	const ingresarElementOnclick = (evt) => {
@@ -26,4 +30,4 @@ const input = () => {
 	return wrapperElement;
 };
 
-export default input;
+export default inputUsuario;
