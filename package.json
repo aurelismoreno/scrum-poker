@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/aurelismoreno/scrum-poker/issues"
   },
-  "homepage": "https://github.com/aurelismoreno/scrum-poker#readme"
+  "homepage": "https://github.com/aurelismoreno/scrum-poker#readme",
+  "dependencies": {
+    "serve": "^11.3.2"
+  }
 }
