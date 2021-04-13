@@ -2,10 +2,10 @@ import encabezado from '../reutilizable/encabezado.js';
 import input from '../reutilizable/input.js';
 import footer from '../reutilizable/footer.js';
 
-const homeView = () => {
+const usuarioView = () => {
 	const wrapperElement = document.createElement('div');
 
-	wrapperElement.classList.add('homeView');
+	wrapperElement.classList.add('usuarioView');
 
 	wrapperElement.appendChild(encabezado());
 	wrapperElement.appendChild(input());
@@ -14,4 +14,4 @@ const homeView = () => {
 	return wrapperElement;
 };
 
-export default homeView;
+export default usuarioView;
