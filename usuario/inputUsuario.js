@@ -2,12 +2,13 @@ const inputUsuario = () => {
 	const template = `
     <div class="input-interno">
         <h3>CREAR SALA</h3>
-        <input id="inputUsuario-Crear" type="text" placeholder="Crear codigo de sala">
-        <button class="input-botonIngresar">CREAR</button>
+        <input id="inputUsuarioCrear" type="text" placeholder="Crear codigo de sala">
+        <button class="input-botonCrear">CREAR</button>
         <br/>
+
         <h3>UNIRSE A UNA SALA </h3>
-        <input id="inputUsuario-Ingresar" type="text" placeholder="Ingrese codido de sala">
-        <button class="input-botonIngresar">UNIRSE</button>
+        <input id="inputUsuarioUnirse" type="text" placeholder="Ingrese codido de sala">
+        <button class="input-botonUnirse">UNIRSE</button>
     </div>
   `;
 
@@ -17,13 +18,13 @@ const inputUsuario = () => {
 
 	const ingresarElementOnclick = (evt) => {
 		evt.preventDefault();
-		const inputIngresarElement = wrapperElement.querySelector('#inputUsuario');
+		const inputIngresarElement = wrapperElement.querySelector('#inputUsuarioUnirse');
 		const ingresarUsuario = inputIngresarElement.value;
-		//   const url = `?view=home&search=${encodeURI(tituloBuscar)}`;
-		//   window.location = url;
+		  const url = `?view=sala${encodeURI(ingresarUsuario)}`;
+		  window.location = url;
 	};
 
-	const ingresarElement = wrapperElement.querySelector('.input-botonIngresar');
+	const ingresarElement = wrapperElement.querySelector('.input-botonUnirse');
 
 	ingresarElement.addEventListener('click', ingresarElementOnclick);
 

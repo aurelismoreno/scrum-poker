@@ -1,6 +1,6 @@
 import encabezadoHome from './encabezadoHome.js';
-import inputHome from '../home/inputHome.js';
-import footer from '../reutilizable/footer.js';
+import inputHome from './inputHome.js'
+import footer from '../reutilizable/footer.js'
 
 const homeView = () => {
 	const wrapperElement = document.createElement('div');

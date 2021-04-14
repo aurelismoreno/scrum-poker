@@ -1,4 +1,4 @@
-import encabezadoUsuario from '../usuario/encabezadoUsuario.js';
+import encabezadoUsuario from '../reutilizable/encabezadoUsuario.js';
 import inputUsuario from '../usuario/inputUsuario.js';
 import footer from '../reutilizable/footer.js';
 
