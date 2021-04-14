@@ -1,6 +1,6 @@
 import homeView from './home/homeView.js';
 import usuarioView from './usuario/usuarioView.js';
-import salaView from './sala/salaView.js'
+import votoView from './voto/votoView.js'
 import resultadosView from './resultados/resultadosView.js'
 
 const routeView = () => {
@@ -13,8 +13,8 @@ const routeView = () => {
 	if (viewName === 'usuario') {
 		return usuarioView();
 	}
-	if (viewName === 'sala') {
-		return salaView();
+	if (viewName === 'voto') {
+		return votoView();
 	}
 	if (viewName === 'resultados') {
 		return resultadosView();

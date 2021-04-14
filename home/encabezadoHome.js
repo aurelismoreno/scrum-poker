@@ -1,9 +1,10 @@
 const encabezadoHome = () => {
 	const template = `
-	<nav class="encabezadoHome-interno">
+	<div class="encabezadoHome-interno">
 		<a href="?view=home" class="encabezadoHome-logo">SCRUM-POKER</a>
-	</nav>`;
+	</div>`;
 	const headerElement = document.createElement('header');
+	headerElement.classList.add('encabezadoHome');
 	headerElement.innerHTML = template;
 	return headerElement;
 };

@@ -1,25 +1,25 @@
 const inputHome = () => {
 	const template = `
-    <div class="input-interno">
+    <div class="inputHome-interno">
         <h3>Usuario</h3>
-        <input id="inputIngresar" type="text" placeholder="Ingrese usuario">
-        <button class="input-Ingresar">Ingresar</button>
+        <input id="inputHomeUsuario" type="text" placeholder="Ingrese usuario">
+        <button class="inputHome-BotonIngresar">Ingresar</button>
     </div>
   `;
 
-	const wrapperElement = document.createElement('div');
-	wrapperElement.classList.add('input-home');
+	const wrapperElement = document.createElement('section');
+	wrapperElement.classList.add('inputHome');
 	wrapperElement.innerHTML = template;
 
 	const ingresarElementOnclick = (evt) => {
 		evt.preventDefault();
-		const inputIngresarElement = wrapperElement.querySelector('#inputIngresar');
+		const inputIngresarElement = wrapperElement.querySelector('#inputHomeUsuario');
 		const ingresarUsuario = inputIngresarElement.value;
 		const url = `?view=usuario${encodeURI(ingresarUsuario)}`;
 		window.location = url;
 	};
 
-	const ingresarElement = wrapperElement.querySelector('.input-Ingresar');
+	const ingresarElement = wrapperElement.querySelector('.inputHome-BotonIngresar');
 
 	ingresarElement.addEventListener('click', ingresarElementOnclick);
 

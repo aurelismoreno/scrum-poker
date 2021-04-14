@@ -1,6 +1,6 @@
 const opcionesVoto = () => {
     const template = `
-    <div class="opcionesVoto">
+    <div class="opcionesVoto-interno">
     <button>0</button>
     <button>1/2</button>
     <button>1</button>

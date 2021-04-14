@@ -1,18 +1,14 @@
-const inputUsuario = () => {
+const inputUsuarioUnirse = () => {
 	const template = `
-    <div class="input-interno">
-        <h3>CREAR SALA</h3>
-        <input id="inputUsuarioCrear" type="text" placeholder="Crear codigo de sala">
-        <button class="input-botonCrear">CREAR</button>
-        <br/>
-
-        <h3>UNIRSE A UNA SALA </h3>
+    <div class="inputUsuarioUnirse-interno">
+        <h3 class="inputUsuarioUnirse-titulo">UNIRSE A UNA SALA </h3>
         <input id="inputUsuarioUnirse" type="text" placeholder="Ingrese codido de sala">
-        <button class="input-botonUnirse">UNIRSE</button>
+        <button class="inputUsuarioUnirse-botonUnirse">UNIRSE</button>
     </div>
   `;
 
 	const wrapperElement = document.createElement('section');
+	wrapperElement.classList.add('inputUsuarioUnirse');
 
 	wrapperElement.innerHTML = template;
 
@@ -20,15 +16,15 @@ const inputUsuario = () => {
 		evt.preventDefault();
 		const inputIngresarElement = wrapperElement.querySelector('#inputUsuarioUnirse');
 		const ingresarUsuario = inputIngresarElement.value;
-		  const url = `?view=sala${encodeURI(ingresarUsuario)}`;
+		  const url = `?view=voto${encodeURI(ingresarUsuario)}`;
 		  window.location = url;
 	};
 
-	const ingresarElement = wrapperElement.querySelector('.input-botonUnirse');
+	const ingresarElement = wrapperElement.querySelector('.inputUsuarioUnirse-botonUnirse');
 
 	ingresarElement.addEventListener('click', ingresarElementOnclick);
 
 	return wrapperElement;
 };
 
-export default inputUsuario;
+export default inputUsuarioUnirse;
