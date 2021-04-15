@@ -1,5 +1,8 @@
 const footer = () => {
-	const template = `<footer class="footer-interno">Realizado por : Aurelis Moreno</footer>`;
+	const template = `
+	<footer class="footer-interno">
+		&copy; ScrumPoker - Todos los derechos - Aurelis Moreno
+	</footer>`;
 
 	const footerElement = document.createElement('div');
 	footerElement.classList.add('footer');

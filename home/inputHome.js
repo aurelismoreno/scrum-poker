@@ -1,9 +1,17 @@
 const inputHome = () => {
 	const template = `
     <div class="inputHome-interno">
-        <h3>Usuario</h3>
-        <input id="inputHomeUsuario" type="text" placeholder="Ingrese usuario">
-        <button class="inputHome-BotonIngresar">Ingresar</button>
+		<form action="">
+			<p>
+				<label>Usuario</label>
+				<input id="inputHomeUsuario" type="text" name="usuario" placeholder="Ingrese usuario">
+			</p>
+			<p class="block">
+				<button class="inputHome-BotonIngresar">
+					Ingresar
+				</button>
+			</p>
+		</form>
     </div>
   `;
 

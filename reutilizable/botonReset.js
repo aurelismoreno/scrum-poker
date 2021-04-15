@@ -12,7 +12,7 @@ const botonReset = () => {
 		evt.preventDefault();
 		const botonResetElement = wrapperElement.querySelector('#botonResetButton');
 		const resetResultados = botonResetElement.value;
-		const url = `?view=home${encodeURI(resetResultados)}`;
+		const url = `?view=voto${encodeURI(resetResultados)}`;
 		window.location = url;
 	};
 
