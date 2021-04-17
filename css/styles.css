@@ -1,0 +1,27 @@
+html{
+    font-size: 16px;
+}
+.homeView {
+	background-color: cadetblue;
+}
+.encabezadoHome {
+	background-color: yellow;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3rem;
+}
+.inputHome {
+	background-color: blue;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+.footer {
+	background-color: red;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 3rem;
+}

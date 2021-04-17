@@ -1,9 +1,17 @@
 const inputUsuarioCrear = () => {
 	const template = `
     <div class="inputUsuarioCrear-interno">
-        <h3 class="inputUsuarioCrear-titulo">CREAR SALA</h3>
-        <input id="inputUsuarioCrear" type="text" placeholder="Crear codigo de sala">
-        <button class="inputUsuarioCrear-botonCrear">CREAR</button>
+		<form action="">
+			<p>
+				<label>Crear Sala</label>
+				<input id="inputUsuarioCrear" type="text" name="Crear codigo de sala"" placeholder="Crear codigo de sala">
+			</p>
+			<p class="block">
+				<button class="inputUsuarioCrear-botonCrear">
+					Crear
+				</button>
+			</p>
+		</form>
     </div>
   `;
 
