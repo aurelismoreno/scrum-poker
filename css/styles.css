@@ -1,8 +1,11 @@
-html{
-    font-size: 16px;
+html {
+	font-size: 16px;
 }
 .homeView {
 	background-color: cadetblue;
+}
+.mb1 {
+	margin-bottom: 1rem;
 }
 .layoutHeader {
 	background-color: yellow;
@@ -13,7 +16,6 @@ html{
 	height: 3rem;
 }
 .layoutBody {
-	background-color: blue;
 	padding-top: 3rem;
 	padding-bottom: 3rem;
 }
@@ -24,4 +26,94 @@ html{
 	left: 0;
 	right: 0;
 	height: 3rem;
+}
+.encabezadoHome-interno {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.encabezadoUsuario-interno {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	padding: 1rem;
+	justify-content: space-between;
+}
+.subEncabezadoVoto-interno {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	padding: 1rem;
+	justify-content: center;
+}
+
+.opcionesVoto-interno {
+	display: flex;
+}
+.participantesVoto-subEncabezado {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1rem;
+}
+.listaParticipantes{
+	padding: 0.5rem;
+}
+.itemParticipantes-interno {
+	display: flex;
+	justify-content: space-around;
+	padding: 0.5rem;
+}
+
+.botonesVoto{
+	display: flex;
+	padding: 1rem;
+	justify-content:center;
+}
+.botonRevelar{
+	padding: 1rem;
+}
+.botonReset{
+	padding: 1rem;
+}
+.inputHome-body {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	align-items: center;
+}
+.subEncabezadoResultados-interno{
+	display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+.resultados{
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+.participantesResultados-subEncabezado{
+	display: flex;
+	justify-content: space-around;
+	margin-top: 1rem;
+}
+
+.botonReset-interno{
+	display: flex;
+	justify-content: center;
+	
+}
+
+.footer-interno {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.itemResultados-interno{
+	display: flex;
+	justify-content: space-around;
+	padding: 0.5rem;
 }

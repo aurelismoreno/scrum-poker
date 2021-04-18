@@ -1,7 +1,6 @@
 const subEncabezadoVoto= () => {
 	const template = `
 	<div class="subEncabezadoVoto-interno">
-		<h3 class="subEncabezadoVoto-Votar">Votar</h3>
 		<h3 class="subEncabezadoVoto-Sala">Sala</h3>
 	</div>`;
 	const subencabezadoElement = document.createElement('section');
