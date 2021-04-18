@@ -7,7 +7,7 @@ const encabezadoUsuario = () => {
 		<h3 class="encabezadoUsuario-Titulo">Usuario</h3>
 	</nav>`;
 	const headerElement = document.createElement('header');
-	headerElement.classList.add('encabezadoUsuario');
+	headerElement.classList.add('encabezadoUsuario','layoutHeader');
 	headerElement.innerHTML = template;
 
 	return headerElement;

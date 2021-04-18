@@ -5,7 +5,7 @@ const footer = () => {
 	</footer>`;
 
 	const footerElement = document.createElement('div');
-	footerElement.classList.add('footer');
+	footerElement.classList.add('footer','layoutFooter');
 	footerElement.innerHTML = template;
 	return footerElement;
 };

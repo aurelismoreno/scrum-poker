@@ -1,14 +1,14 @@
-const subencabezadoResultados = () => {
+const subEncabezadoResultados = () => {
     const template = `
-    <div class="subencabezadoResultados-interno">
-        <h3 class="subencabezadoResultados-Resultados">Resultados</h3>
-        <h3 class="subencabezadoResultados-Sala">Sala</h3>
+    <div class="subEncabezadoResultados-interno">
+        <h3 class="subEncabezadoResultados-Resultados">Resultados</h3>
+        <h3 class="subEncabezadoResultados-Sala">Sala</h3>
     </div>`;
     const wrapperElement = document.createElement('section');
-    wrapperElement.classList.add('subencabezadoResultados');
+    wrapperElement.classList.add('subEncabezadoResultados');
     wrapperElement.innerHTML = template;
 
     return wrapperElement;
 };
 
-export default subencabezadoResultados;
+export default subEncabezadoResultados;

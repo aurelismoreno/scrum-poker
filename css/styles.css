@@ -4,7 +4,7 @@ html{
 .homeView {
 	background-color: cadetblue;
 }
-.encabezadoHome {
+.layoutHeader {
 	background-color: yellow;
 	position: fixed;
 	top: 0;
@@ -12,12 +12,12 @@ html{
 	right: 0;
 	height: 3rem;
 }
-.inputHome {
+.layoutBody {
 	background-color: blue;
 	padding-top: 3rem;
 	padding-bottom: 3rem;
 }
-.footer {
+.layoutFooter {
 	background-color: red;
 	position: fixed;
 	bottom: 0;

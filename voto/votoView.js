@@ -1,9 +1,5 @@
 import encabezadoUsuario from '../reutilizable/encabezadoUsuario.js';
-import subencabezadoVoto from './subencabezadoVoto.js';
-import opcionesVoto from './opcionesVoto.js'
-import participantesVoto from './participantesVoto.js'
-import botonRevelar from './botonRevelar.js'
-import botonReset from '../reutilizable/botonReset.js'
+import bodyViewVoto from '../voto/bodyViewVoto.js'
 import footer from '../reutilizable/footer.js';
 
 
@@ -14,11 +10,7 @@ const votoView = () => {
     wrapperElement.classList.add('votoView');
 
     wrapperElement.appendChild(encabezadoUsuario());
-    wrapperElement.appendChild(subencabezadoVoto());
-    wrapperElement.appendChild(opcionesVoto());
-    wrapperElement.appendChild(participantesVoto());
-    wrapperElement.appendChild(botonRevelar());
-    wrapperElement.appendChild(botonReset());
+    wrapperElement.appendChild(bodyViewVoto());
 	wrapperElement.appendChild(footer());
 
     return wrapperElement;

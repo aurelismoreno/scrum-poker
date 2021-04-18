@@ -16,7 +16,7 @@ const inputHome = () => {
   `;
 
 	const wrapperElement = document.createElement('section');
-	wrapperElement.classList.add('inputHome');
+	wrapperElement.classList.add('inputHome','layoutBody');
 	wrapperElement.innerHTML = template;
 
 	const ingresarElementOnclick = (evt) => {

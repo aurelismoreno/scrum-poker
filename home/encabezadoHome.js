@@ -6,7 +6,7 @@ const encabezadoHome = () => {
 		</a>
 	</div>`;
 	const headerElement = document.createElement('header');
-	headerElement.classList.add('encabezadoHome');
+	headerElement.classList.add('encabezadoHome','layoutHeader');
 	headerElement.innerHTML = template;
 	return headerElement;
 };
