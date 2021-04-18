@@ -1,14 +1,14 @@
-import botonRevelar from '../voto/botonRevelar.js';
+import botonRevelar from './botonRevelar.js';
 import botonReset from '../reutilizable/botonReset.js'
 
-const botonesVoto = () => {
+const revelarReset = () => {
 	const wrapperElement = document.createElement('div');
 
-	wrapperElement.classList.add('botonesVoto');
+	wrapperElement.classList.add('revelarReset');
 	wrapperElement.appendChild(botonRevelar());
     wrapperElement.appendChild(botonReset());
 
 	return wrapperElement;
 };
 
-export default botonesVoto;
+export default revelarReset;

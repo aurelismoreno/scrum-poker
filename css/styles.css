@@ -67,7 +67,7 @@ html {
 	padding: 0.5rem;
 }
 
-.botonesVoto{
+.revelarReset{
 	display: flex;
 	padding: 1rem;
 	justify-content:center;
@@ -116,4 +116,16 @@ html {
 	display: flex;
 	justify-content: space-around;
 	padding: 0.5rem;
+}
+
+.opcionesVoto{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	justify-content: center;
+}
+.botonVoto{
+	width: 25%;
+	margin: 0.5rem;
 }

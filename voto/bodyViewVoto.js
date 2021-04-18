@@ -1,7 +1,7 @@
 import subEncabezadoVoto from '../voto/subEncabezadoVoto.js';
 import opcionesVoto from '../voto/opcionesVoto.js';
 import participantesVoto from '../voto/participantesVoto.js';
-import botonesVoto from '../voto/botonesVoto.js'
+import revelarReset from '../voto/revelarReset.js'
 
 
 const bodyViewVoto = () => {
@@ -11,7 +11,7 @@ const bodyViewVoto = () => {
 	wrapperElement.appendChild(subEncabezadoVoto());
 	wrapperElement.appendChild(opcionesVoto());
 	wrapperElement.appendChild(participantesVoto());
-    wrapperElement.appendChild(botonesVoto());
+    wrapperElement.appendChild(revelarReset());
     
 
 	return wrapperElement;
