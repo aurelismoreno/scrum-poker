@@ -1,4 +1,4 @@
-const botonRevelar = () => {
+const botonRevelar = (nroSala) => {
 	const template = `
     <div class="botonRevelar-interno">
 		<button class="botonRevelar-button" id="botonRevelarButton">Revelar</button>
@@ -10,10 +10,18 @@ const botonRevelar = () => {
 	//    COMPORTAMIENTO BOTON REVELAR
 	const revelarElementOnclick = (evt) => {
 		evt.preventDefault();
-		const botonRevelarElement = wrapperElement.querySelector('#botonRevelarButton');
-		const revelarResultados = botonRevelarElement.value;
-		const url = `?view=resultados${encodeURI(revelarResultados)}`;
-		window.location = url;
+
+		const db = firebase.firestore();
+
+		db.collection('sala')
+			.doc(nroSala)
+			.set({ revelar: true }, { merge: true })
+			.then(() => {
+				console.log('Document successfully written!');
+			})
+			.catch((error) => {
+				console.error('Error writing document: ', error);
+			});
 	};
 
 	const revelarElement = wrapperElement.querySelector('.botonRevelar-button');

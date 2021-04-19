@@ -1,4 +1,4 @@
-const inputUsuarioCrear = () => {
+const inputUsuarioCrear = (user) => {
 	const template = `
     <div class="inputUsuarioCrear-interno">
 		<form action="" class="inputHome-body">
@@ -19,10 +19,17 @@ const inputUsuarioCrear = () => {
 
 		db.collection('sala')
 			.add({
-				participantes: {},
+				participantes: {
+					[user.uid]: {
+						nombre: user.uid,
+						puntuacion: 0,
+						voto: false,
+					},
+				},
 				resultado: 0,
 				revelar: false,
 				fechaCreacion: new Date().toISOString(),
+				usuarioAdmin: user.uid,
 			})
 			.then((docRef) => {
 				console.log('Document written with ID: ', docRef.id);

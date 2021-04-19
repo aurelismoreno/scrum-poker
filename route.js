@@ -8,43 +8,62 @@ const db = firebase.firestore();
 
 const routeView = () => {
 	const urlParams = new URLSearchParams(window.location.search);
-	// const viewName = urlParams.get('view');
-	const nroSala = urlParams.get('sala');
+	firebase.auth().onAuthStateChanged((user) => {
+		console.log('user', user);
+		if (user) {
+			const nroSala = urlParams.get('sala');
 
-	if (nroSala) {
-		db.collection('sala')
-			.doc(nroSala)
-			.onSnapshot((doc) => {
-				const salaData = doc.data();
-				console.log('Current data: ', salaData);
-				if (!salaData) {
-					const url = `?`;
-					window.location = url;
-				}
-				if (salaData.revelar === true) {
-					renderizado(resultadosView());
-				} else {
-					renderizado(votoView());
-				}
-			});
-	} else {
-		renderizado(usuarioView());
-	}
+			if (nroSala) {
+				db.collection('sala')
+					.doc(nroSala)
+					.onSnapshot((doc) => {
+						const salaData = doc.data();
+						console.log('Current data: ', salaData);
+						if (!salaData) {
+							const url = `?`;
+							window.location = url;
+							return;
+						}
+						if (!salaData.participantes[user.uid]) {
+							salaData.participantes[user.uid] = {
+								nombre: user.uid,
+								puntuacion: 0,
+								voto: false,
+							};
+							db.collection('sala')
+								.doc(nroSala)
+								.set(salaData)
+								.then(() => {
+									console.log('Document successfully written!');
+								})
+								.catch((error) => {
+									console.error('Error writing document: ', error);
+								});
 
-	// if (viewName === 'home' || viewName === null) {
-	// 	return homeView();
-	// }
-	// if (viewName === 'usuario') {
-	// 	return usuarioView();
-	// }
-	// if (viewName === 'voto') {
-	// 	return votoView();
-	// }
-	// if (viewName === 'resultados') {
-	// 	return resultadosView();
-	// }
+							return;
+						}
 
-	// return homeView();
+						if (salaData.revelar === true) {
+							renderizado(resultadosView(user));
+						} else {
+							renderizado(votoView(salaData,nroSala,user));
+						}
+					});
+			} else {
+				renderizado(usuarioView(user));
+			}
+		} else {
+			firebase
+				.auth()
+				.signInAnonymously()
+				.then((usuario) => {
+					console.log('usuarioCreado', usuario);
+				})
+				.catch((error) => {
+					console.log('error creando usuario', error);
+				});
+		}
+	});
 };
 
 export default routeView;

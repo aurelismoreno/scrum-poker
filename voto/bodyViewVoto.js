@@ -4,15 +4,17 @@ import participantesVoto from '../voto/participantesVoto.js';
 import revelarReset from '../voto/revelarReset.js'
 
 
-const bodyViewVoto = () => {
+const bodyViewVoto = (nroSala,salaData,user) => {
 	const wrapperElement = document.createElement('div');
 
 	wrapperElement.classList.add('bodyViewVoto','layoutBody');
-	wrapperElement.appendChild(subEncabezadoVoto());
+	wrapperElement.appendChild(subEncabezadoVoto(nroSala));
 	wrapperElement.appendChild(opcionesVoto());
-	wrapperElement.appendChild(participantesVoto());
-    wrapperElement.appendChild(revelarReset());
+	wrapperElement.appendChild(participantesVoto(Object.values(salaData.participantes)));
     
+    if(salaData.usuarioAdmin === user.uid){
+		wrapperElement.appendChild(revelarReset(nroSala));
+	}
 
 	return wrapperElement;
 };

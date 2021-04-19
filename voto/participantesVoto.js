@@ -1,6 +1,6 @@
 import listaParticipantes from '../voto/listaParticipantes.js'
 
-const participantesVoto = () => {
+const participantesVoto = (arrayParticipantes) => {
     const template = `
     <div class="participantesVoto-interno">
         <div class="participantesVoto-subEncabezado">
@@ -14,7 +14,7 @@ const participantesVoto = () => {
     wrapperElement.innerHTML = template;
 
     const insertarElement = wrapperElement.querySelector(".participantesVoto-Lista");
-    insertarElement.appendChild(listaParticipantes());
+    insertarElement.appendChild(listaParticipantes(arrayParticipantes));
 
     return wrapperElement;
 };
