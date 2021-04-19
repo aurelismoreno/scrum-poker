@@ -1,5 +1,4 @@
 import encabezadoHome from './encabezadoHome.js';
-import inputHome from './inputHome.js'
 import footer from '../reutilizable/footer.js'
 
 const homeView = () => {
@@ -8,7 +7,6 @@ const homeView = () => {
 	wrapperElement.classList.add('homeView');
 
 	wrapperElement.appendChild(encabezadoHome());
-	wrapperElement.appendChild(inputHome());
 	wrapperElement.appendChild(footer());
 
 	return wrapperElement;
