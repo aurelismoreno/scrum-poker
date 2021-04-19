@@ -1,6 +1,6 @@
 
 import listaResultados from '../resultados/listaResultados.js'
-const participantesResultados = () => {
+const participantesResultados = (arrayParticipantes) => {
     const template = `
     <div class="participantesResultados-interno">
         <div class="participantesResultados-subEncabezado">
@@ -14,7 +14,7 @@ const participantesResultados = () => {
     wrapperElement.innerHTML = template;
 
     const insertarElement = wrapperElement.querySelector(".participantesVoto-Lista");
-    insertarElement.appendChild(listaResultados());
+    insertarElement.appendChild(listaResultados(arrayParticipantes));
 
     return wrapperElement;
 };

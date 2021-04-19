@@ -1,17 +1,15 @@
 import itemResultados from './itemResultados.js';
 
-const arrayParticipantes = ['Aurelis', 'Aurelis 1', 'Aurelis 2', 'Aurelis 3'];
-
-const listaParticipantesResultados = () => {
+const listaResultados = (arrayParticipantes) => {
 	const wrapperElement = document.createElement('div');
 
 	wrapperElement.classList.add('listaParticipantesResultados');
 
-	arrayParticipantes.forEach(() => {
-		wrapperElement.appendChild(itemResultados());
+	arrayParticipantes.forEach((dataParticipante) => {
+		wrapperElement.appendChild(itemResultados(dataParticipante));
 	});
 
 	return wrapperElement;
 };
 
-export default listaParticipantesResultados;
+export default listaResultados;

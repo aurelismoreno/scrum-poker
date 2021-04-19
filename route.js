@@ -44,7 +44,7 @@ const routeView = () => {
 						}
 
 						if (salaData.revelar === true) {
-							renderizado(resultadosView(user));
+							renderizado(resultadosView(user,salaData,nroSala));
 						} else {
 							renderizado(votoView(salaData,nroSala,user));
 						}

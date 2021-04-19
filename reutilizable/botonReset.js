@@ -1,4 +1,4 @@
-const botonReset = () => {
+const botonReset = (nroSala) => {
 	const template = `
     <div class="botonReset-interno">
 		<button class="botonReset-button" id="botonResetButton">Reset</button>
@@ -10,10 +10,17 @@ const botonReset = () => {
 	//  COMPORTAMIENTO BOTON RESET
     const resetElementOnclick = (evt) => {
 		evt.preventDefault();
-		const botonResetElement = wrapperElement.querySelector('#botonResetButton');
-		const resetResultados = botonResetElement.value;
-		const url = `?view=voto${encodeURI(resetResultados)}`;
-		window.location = url;
+		const db = firebase.firestore();
+
+		db.collection('sala')
+			.doc(nroSala)
+			.set({ revelar: false }, { merge: true })
+			.then(() => {
+				console.log('Document successfully written!');
+			})
+			.catch((error) => {
+				console.error('Error writing document: ', error);
+			});
 	};
 
 	const resetElement = wrapperElement.querySelector('.botonReset-button');

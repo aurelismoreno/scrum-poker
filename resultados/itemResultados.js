@@ -1,8 +1,8 @@
-const itemResultados = () => {
+const itemResultados = (dataParticipante) => {
     const template = `
     <div class="itemResultados-interno">
-        <div>Aurelis</div>
-        <div>0.0</div>
+        <div>${dataParticipante.nombre}</div>
+        <div>${dataParticipante.puntuacion}</div>
     </div>`;
     const wrapperElement = document.createElement('div');
     wrapperElement.classList.add('itemResultados');
