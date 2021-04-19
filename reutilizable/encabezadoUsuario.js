@@ -1,7 +1,7 @@
 const encabezadoUsuario = () => {
 	const template = `
 	<nav class="encabezadoUsuario-interno">
-		<a href="?view=home" class="encabezadoUsuario-logo">
+		<a href="?" class="encabezadoUsuario-logo">
 			<h1>ScrumPoker</h1>
 		</a>
 		<h3 class="encabezadoUsuario-Titulo">Usuario</h3>

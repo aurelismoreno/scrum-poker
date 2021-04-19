@@ -17,8 +17,8 @@ const inputUsuarioUnirse = () => {
 	const ingresarElementOnclick = (evt) => {
 		evt.preventDefault();
 		const inputIngresarElement = wrapperElement.querySelector('#inputUsuarioUnirse');
-		const ingresarUsuario = inputIngresarElement.value;
-		  const url = `?view=voto${encodeURI(ingresarUsuario)}`;
+		const numeroSala = inputIngresarElement.value;
+		  const url = `?sala=${encodeURI(numeroSala)}`;
 		  window.location = url;
 	};
 

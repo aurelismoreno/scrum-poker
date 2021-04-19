@@ -3,7 +3,6 @@ const inputUsuarioCrear = () => {
     <div class="inputUsuarioCrear-interno">
 		<form action="" class="inputHome-body">
 			<label class="mb1">Crear Sala</label>
-			<input class="mb1" id="inputUsuarioCrear" type="text" name="Crear codigo de sala"" placeholder="Crear codigo de sala">
 			<button class="inputUsuarioCrear-botonCrear">Crear</button>
 		</form>
     </div>
@@ -16,10 +15,23 @@ const inputUsuarioCrear = () => {
 
 	const ingresarElementOnclick = (evt) => {
 		evt.preventDefault();
-		const inputIngresarElement = wrapperElement.querySelector('#inputUsuarioCrear');
-		const ingresarUsuario = inputIngresarElement.value;
-		  const url = `?view=voto${encodeURI(ingresarUsuario)}`;
-		  window.location = url;
+		const db = firebase.firestore();
+
+		db.collection('sala')
+			.add({
+				participantes: {},
+				resultado: 0,
+				revelar: false,
+				fechaCreacion: new Date().toISOString(),
+			})
+			.then((docRef) => {
+				console.log('Document written with ID: ', docRef.id);
+				const url = `?sala=${encodeURI(docRef.id)}`;
+				window.location = url;
+			})
+			.catch((error) => {
+				console.error('Error adding document: ', error);
+			});
 	};
 
 	const ingresarElement = wrapperElement.querySelector('.inputUsuarioCrear-botonCrear');
