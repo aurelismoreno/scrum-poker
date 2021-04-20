@@ -1,12 +1,12 @@
 import botonRevelar from './botonRevelar.js';
 import botonReset from '../reutilizable/botonReset.js'
 
-const revelarReset = (nroSala) => {
+const revelarReset = (nroSala,salaData) => {
 	const wrapperElement = document.createElement('div');
 
 	wrapperElement.classList.add('revelarReset');
-	wrapperElement.appendChild(botonRevelar(nroSala));
-    wrapperElement.appendChild(botonReset());
+	wrapperElement.appendChild(botonRevelar(nroSala,salaData));
+    wrapperElement.appendChild(botonReset(nroSala,salaData));
 
 	return wrapperElement;
 };

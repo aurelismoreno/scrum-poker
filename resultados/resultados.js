@@ -1,5 +1,7 @@
-const resultados = () => {
-    const template = `<div class="resultados-interno">0.0</div>`;
+const resultados = (salaData) => {
+
+    const template = `
+    <div class="resultados-interno">${salaData.resultado}</div>`;
     const wrapperElement = document.createElement('div');
     wrapperElement.classList.add('resultados');
     wrapperElement.innerHTML = template;

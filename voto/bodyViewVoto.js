@@ -9,11 +9,11 @@ const bodyViewVoto = (nroSala,salaData,user) => {
 
 	wrapperElement.classList.add('bodyViewVoto','layoutBody');
 	wrapperElement.appendChild(subEncabezadoVoto(nroSala));
-	wrapperElement.appendChild(opcionesVoto());
+	wrapperElement.appendChild(opcionesVoto(salaData,user,nroSala));
 	wrapperElement.appendChild(participantesVoto(Object.values(salaData.participantes)));
     
     if(salaData.usuarioAdmin === user.uid){
-		wrapperElement.appendChild(revelarReset(nroSala));
+		wrapperElement.appendChild(revelarReset(nroSala,salaData));
 	}
 
 	return wrapperElement;

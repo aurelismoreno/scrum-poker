@@ -8,11 +8,11 @@ const bodyViewResultado = (salaData,nroSala,user) => {
 
 	wrapperElement.classList.add('bodyViewResultado', 'layoutBody');
 	wrapperElement.appendChild(subEncabezadoResultados());
-	wrapperElement.appendChild(resultados());
+	wrapperElement.appendChild(resultados(salaData));
 	wrapperElement.appendChild(participantesResultados(Object.values(salaData.participantes)));
 	
 	if(salaData.usuarioAdmin === user.uid){
-		wrapperElement.appendChild(botonReset(nroSala));
+		wrapperElement.appendChild(botonReset(nroSala,salaData));
 	}
 
 	return wrapperElement;
