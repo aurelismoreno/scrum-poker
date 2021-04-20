@@ -21,7 +21,7 @@ const inputUsuarioCrear = (user) => {
 			.add({
 				participantes: {
 					[user.uid]: {
-						nombre: user.uid,
+						nombre: user.displayName || user.uid,
 						puntuacion: 0,
 						voto: false,
 					},

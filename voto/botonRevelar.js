@@ -16,11 +16,17 @@ const botonRevelar = (nroSala, salaData) => {
 		let cantidadVotos = 0;
 
 		Object.values(salaData.participantes).forEach((participante) => {
-			suma = suma + participante.puntuacion;
-			cantidadVotos = cantidadVotos + 1;
+			if (typeof participante.puntuacion === 'number') {
+				suma = suma + participante.puntuacion;
+				cantidadVotos = cantidadVotos + 1;
+			}
 		});
 
-		promedio = suma / cantidadVotos;
+		if (cantidadVotos != 0) {
+			promedio = suma / cantidadVotos;
+		} else {
+			promedio = 'S/V';
+		}
 
 		const db = firebase.firestore();
 

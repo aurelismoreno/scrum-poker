@@ -9,7 +9,7 @@ const db = firebase.firestore();
 const routeView = () => {
 	const urlParams = new URLSearchParams(window.location.search);
 	firebase.auth().onAuthStateChanged((user) => {
-		console.log('user', user);
+		console.log('user', user); // PARA VER SI CAMBIA EL NOMBRE
 		if (user) {
 			const nroSala = urlParams.get('sala');
 
@@ -26,7 +26,7 @@ const routeView = () => {
 						}
 						if (!salaData.participantes[user.uid]) {
 							salaData.participantes[user.uid] = {
-								nombre: user.uid,
+								nombre: user.displayName || user.uid,
 								puntuacion: 0,
 								voto: false,
 							};

@@ -4,7 +4,7 @@ const encabezadoUsuario = (user) => {
 		<a href="?" class="encabezadoUsuario-logo">
 			<h1>ScrumPoker</h1>
 		</a>
-		<h3 class="encabezadoUsuario-Titulo">Usuario:${user.uid}</h3>
+		<h3 class="encabezadoUsuario-Titulo">Usuario:${user.displayName|| user.uid}</h3>
 	</nav>`;
 	const headerElement = document.createElement('header');
 	headerElement.classList.add('encabezadoUsuario','layoutHeader');

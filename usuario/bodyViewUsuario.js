@@ -6,7 +6,7 @@ const bodyViewUsuario = (user) => {
     const wrapperElement = document.createElement('div');
 
     wrapperElement.classList.add('bodyViewUsuario','layoutBody');
-    wrapperElement.appendChild(inputHome());
+    wrapperElement.appendChild(inputHome(user));
 
     wrapperElement.appendChild(inputUsuarioCrear(user));
 	wrapperElement.appendChild(inputUsuarioUnirse());
