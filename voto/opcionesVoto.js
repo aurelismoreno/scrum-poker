@@ -1,6 +1,6 @@
 const arrayVotoValores = [0, 1 / 2, 1, 2, 3, 5, 8, 13, 21, 34, '?', '∞'];
 
-const opcionesVoto = (salaData, user,nroSala) => {
+const opcionesVoto = (user, nroSala) => {
 	const botonVoto = (botonTexto) => {
 		const template = `${botonTexto}`;
 		const buttonElement = document.createElement('button');
@@ -12,14 +12,19 @@ const opcionesVoto = (salaData, user,nroSala) => {
 
 		const buttonElementOnclick = (evt) => {
 			evt.preventDefault();
-			console.log(salaData, user, botonTexto);
-			salaData.participantes[user.uid].puntuacion = botonTexto;
-			salaData.participantes[user.uid].voto = true;
 			const db = firebase.firestore();
 
 			db.collection('sala')
 				.doc(nroSala)
-				.set({ participantes: salaData.participantes }, { merge: true })
+				.collection('participantes')
+				.doc(user.uid)
+				.set(
+					{
+						voto: true,
+						puntuacion: botonTexto,
+					},
+					{ merge: true }
+				)
 				.then(() => {
 					console.log('Document successfully written!');
 				})

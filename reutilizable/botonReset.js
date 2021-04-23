@@ -1,4 +1,4 @@
-const botonReset = (nroSala, salaData) => {
+const botonReset = (nroSala) => {
 	const template = `
     <div class="botonReset-interno">
 		<button class="botonReset-button" id="botonResetButton">Reset</button>
@@ -11,18 +11,40 @@ const botonReset = (nroSala, salaData) => {
 	const resetElementOnclick = (evt) => {
 		evt.preventDefault();
 
-		Object.values(salaData.participantes).forEach((participante) => {
-			participante.puntuacion = 0;
-			participante.voto = false;
-		});
-
 		const db = firebase.firestore();
 
 		db.collection('sala')
 			.doc(nroSala)
-			.set({ revelar: false, resultado: 0 ,participantes: salaData.participantes}, { merge: true })
+			.set({ revelar: false, resultado: 0 }, { merge: true })
 			.then(() => {
 				console.log('Document successfully written!');
+			})
+			.catch((error) => {
+				console.error('Error writing document: ', error);
+			});
+
+		db.collection('sala')
+			.doc(nroSala)
+			.collection('participantes')
+			.get()
+			.then((participantesSnapshot) => {
+				console.log('Data', participantesSnapshot);
+				participantesSnapshot.docs.forEach((participanteSnapshot) => {
+					db.collection('sala')
+						.doc(nroSala)
+						.collection('participantes')
+						.doc(participanteSnapshot.id)
+						.set({
+							puntuacion: 0,
+							voto: false,
+						})
+						.then(() => {
+							console.log('Document successfully written!');
+						})
+						.catch((error) => {
+							console.error('Error writing document: ', error);
+						});
+				});
 			})
 			.catch((error) => {
 				console.error('Error writing document: ', error);

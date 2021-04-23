@@ -19,23 +19,28 @@ const inputUsuarioCrear = (user) => {
 
 		db.collection('sala')
 			.add({
-				participantes: {
-					[user.uid]: {
-						nombre: user.displayName || user.uid,
-						puntuacion: 0,
-						voto: false,
-					},
-				},
 				resultado: 0,
 				revelar: false,
 				fechaCreacion: new Date().toISOString(),
 				usuarioAdmin: user.uid,
 			})
-			.then((docRef) => {
-				console.log('Document written with ID: ', docRef.id);
-				const url = `?sala=${encodeURI(docRef.id)}`;
-				window.location = url;
+			.then((salaDocRef) => {
+				return salaDocRef
+					.collection('participantes')
+					.doc(user.uid)
+					.set({
+						nombre: user.displayName || user.uid,
+						puntuacion: 0,
+						voto: false,
+					})
+					.then(() => {
+						console.log('Document written with ID: ', salaDocRef.id);
+						const url = `?sala=${encodeURI(salaDocRef.id)}`;
+						window.location = url;
+						return salaDocRef;
+					});
 			})
+
 			.catch((error) => {
 				console.error('Error adding document: ', error);
 			});

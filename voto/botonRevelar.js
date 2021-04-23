@@ -1,4 +1,4 @@
-const botonRevelar = (nroSala, salaData) => {
+const botonRevelar = (nroSala, participantes) => {
 	const template = `
     <div class="botonRevelar-interno">
 		<button class="botonRevelar-button" id="botonRevelarButton">Revelar</button>
@@ -15,7 +15,7 @@ const botonRevelar = (nroSala, salaData) => {
 		let promedio = 0;
 		let cantidadVotos = 0;
 
-		Object.values(salaData.participantes).forEach((participante) => {
+		participantes.forEach((participante) => {
 			if (typeof participante.puntuacion === 'number') {
 				suma = suma + participante.puntuacion;
 				cantidadVotos = cantidadVotos + 1;

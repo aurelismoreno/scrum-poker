@@ -4,13 +4,13 @@ import footer from '../reutilizable/footer.js';
 
 
 
-const votoView = (salaData,nroSala,user) => {
+const votoView = (salaData,nroSala,user,participantes) => {
     const wrapperElement = document.createElement('section');
 
     wrapperElement.classList.add('votoView');
 
     wrapperElement.appendChild(encabezadoUsuario(user));
-    wrapperElement.appendChild(bodyViewVoto(nroSala,salaData,user));
+    wrapperElement.appendChild(bodyViewVoto(nroSala,salaData,user,participantes));
 	wrapperElement.appendChild(footer());
 
     return wrapperElement;

@@ -51,7 +51,7 @@ html {
 .opcionesVoto-interno {
 	display: flex;
 }
-.participantesVoto-subEncabezado {
+.subEncabezadoParticipantes-subEncabezado {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
